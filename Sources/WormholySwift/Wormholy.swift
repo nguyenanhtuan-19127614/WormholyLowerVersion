@@ -105,7 +105,7 @@ public class Wormholy: NSObject
     }
     
     // MARK: - Navigation
-    static func presentWormholyFlow() {
+    public static func presentWormholyFlow() {
         // Check if RequestsView is already presented
         if let rootViewController = UIApplication.shared.windows.first?.rootViewController,
            let hostingController = rootViewController.presentedViewController as? UIHostingController<RequestsView> {
