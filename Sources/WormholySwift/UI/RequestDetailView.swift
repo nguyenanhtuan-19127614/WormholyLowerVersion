@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 16.0, *)
 internal struct RequestDetailView: View {
     @State private var showAlert = false
     @State private var alertMessage = ""
@@ -127,6 +128,7 @@ internal struct RequestDetailView: View {
     }
 }
 
+@available(iOS 16.0, *)
 struct RequestDetailView_Previews: PreviewProvider {
     static var previews: some View {
         // Create a fake request for preview

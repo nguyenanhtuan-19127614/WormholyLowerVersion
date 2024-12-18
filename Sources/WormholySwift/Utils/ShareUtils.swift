@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-
+@available(iOS 16.0,*)
 internal final class ShareUtils {
 
     internal static func shareRequests(requests: [RequestModel], requestExportOption: RequestResponseExportOption = .flat) -> ActivityView {

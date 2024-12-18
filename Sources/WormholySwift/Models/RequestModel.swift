@@ -7,7 +7,7 @@
 //
 import Foundation
 import UIKit
-
+@available(iOS 16.0,*)
 internal class RequestModel: Hashable, Decodable, ObservableObject {
     internal let id: String
     internal let url: String

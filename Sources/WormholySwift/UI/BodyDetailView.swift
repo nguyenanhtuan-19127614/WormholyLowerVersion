@@ -8,6 +8,7 @@
 import SwiftUI
 import UIKit
 
+@available(iOS 16.0, *)
 internal struct BodyDetailView: View {
     @State private var searchText: String = ""
     @State private var highlightedRanges: [NSTextCheckingResult] = []
@@ -19,6 +20,7 @@ internal struct BodyDetailView: View {
         self.dataBody = String(data: dataBody, encoding: .utf8) ?? "No body available"
     }
     
+   
     var body: some View {
         VStack(spacing: 0) {
             SearchBar(text: $searchText, onTextChanged: {
@@ -94,6 +96,7 @@ internal struct BodyDetailView: View {
     }
 }
 
+@available(iOS 16.0, *)
 struct BodyDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let sampleData = """

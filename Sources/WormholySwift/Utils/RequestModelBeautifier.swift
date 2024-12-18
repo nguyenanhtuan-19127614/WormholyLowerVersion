@@ -9,6 +9,7 @@
 import UIKit
 import SwiftUI
 
+@available(iOS 16.0,*)
 internal class RequestModelBeautifier {
     
     static func overview(request: RequestModel) -> (LocalizedStringKey, String) {

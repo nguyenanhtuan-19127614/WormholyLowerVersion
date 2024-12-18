@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SwiftUI
 
+@available(iOS 16.0, *)
 public class Wormholy: NSObject
 {
     /// Hosts that will be ignored from being recorded
@@ -140,6 +141,7 @@ public class Wormholy: NSObject
     }()
 }
 
+@available(iOS 16.0, *)
 /// WormholyConstructor calls this to initialize library
 extension Wormholy {
     

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+@available(iOS 16.0,*)
 @MainActor
 internal class Storage: NSObject, ObservableObject {
 

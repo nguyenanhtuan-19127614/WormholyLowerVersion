@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 16.0,*)
 public class CustomHTTPProtocol: URLProtocol {
     static var ignoredHosts = [String]()
     
@@ -98,7 +99,7 @@ public class CustomHTTPProtocol: URLProtocol {
         currentRequest = nil
     }
 }
-
+@available(iOS 16.0,*)
 extension CustomHTTPProtocol: URLSessionDataDelegate {
     public func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
         client?.urlProtocol(self, didLoad: data)

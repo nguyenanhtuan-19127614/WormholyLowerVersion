@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+@available(iOS 16.0,*)
 extension Date{
     func stringWithFormat(dateFormat: String, timezone: TimeZone? = nil) -> String?{
         let dateFormatter = DateFormatter()
@@ -18,7 +18,7 @@ extension Date{
         return dateFormatter.string(from: self)
     }
 }
-
+@available(iOS 16.0,*)
 extension Double {
     func formattedMilliseconds() -> String{
         

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+@available(iOS 16.0,*)
 class CustomActivity: UIActivity {
     
     override var activityTitle: String?{

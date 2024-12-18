@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+@available(iOS 16.0,*)
 internal struct RequestCellView: View {
     @ObservedObject var request: RequestModel
 
@@ -44,7 +44,7 @@ internal struct RequestCellView: View {
         }
     }
 }
-
+@available(iOS 16.0,*)
 struct RequestCellView_Previews: PreviewProvider {
     static var previews: some View {
         // Create a fake request for preview

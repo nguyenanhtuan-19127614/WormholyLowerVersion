@@ -6,7 +6,7 @@
 //  Copyright © 2018 Wormholy. All rights reserved.
 //
 import UIKit
-
+@available(iOS 16.0,*)
 class WHBundle: Bundle {
     static func getBundle() -> Bundle{
         #if SWIFT_PACKAGE

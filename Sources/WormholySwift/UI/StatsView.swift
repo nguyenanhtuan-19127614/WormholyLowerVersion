@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+@available(iOS 16.0,*)
 struct StatsView: View {
     @ObservedObject private var storage = Storage.shared
     @Environment(\.presentationMode) var presentationMode
@@ -198,7 +198,7 @@ struct StatsView: View {
         storage.requests.compactMap { $0.dataResponse?.count }.max() ?? 0
     }
 }
-
+@available(iOS 16.0,*)
 #Preview {
     StatsView()
 }

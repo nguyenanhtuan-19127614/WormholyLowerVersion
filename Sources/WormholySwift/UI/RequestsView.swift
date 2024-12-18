@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 16.0, *)
 internal struct RequestsView: View {
     @State private var searchText = Storage.defaultFilter ?? ""
     @ObservedObject private var storage = Storage.shared
@@ -113,6 +114,7 @@ internal struct RequestsView: View {
     }
 }
 
+@available(iOS 16.0, *)
 struct RequestsView_Previews: PreviewProvider {
     static var previews: some View {
         // Create fake data for preview using the mock initializer with all parameters

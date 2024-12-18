@@ -9,6 +9,7 @@ import SwiftUI
 
 /// A UIViewRepresentable struct that wraps a UITextView to display and highlight text efficiently.
 /// Used in BodyDetailView to handle long text with search functionality, highlighting search results.
+@available(iOS 16.0,*)
 internal struct HighlightedTextView: UIViewRepresentable {
     let text: String
     @Binding var highlightedRanges: [NSTextCheckingResult]

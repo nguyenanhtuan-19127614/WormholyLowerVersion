@@ -7,11 +7,11 @@
 //
 
 import UIKit
-
+@available(iOS 16.0,*)
 class WHTextView: UITextView {
     
 }
-
+@available(iOS 16.0,*)
 extension WHTextView {
     func highlights(text: String?, with color: UIColor = UIColor.green, font: UIFont = UIFont.systemFont(ofSize: 14), highlightedFont: UIFont = UIFont.boldSystemFont(ofSize: 14)) -> [NSTextCheckingResult] {
         
