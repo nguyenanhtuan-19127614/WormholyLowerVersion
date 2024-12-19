@@ -111,6 +111,12 @@ public class Wormholy: NSObject
         guard let topMostVC = UIWindow.getTopMostWormholyVC() else {
             return
         }
+        
+        if topMostVC is UIHostingController<WormHolyRequestsView> {
+            // WormHolyRequestsView is already presented, do nothing
+            return
+        }
+        
         if let hostingController = topMostVC.presentedViewController as? UIHostingController<WormHolyRequestsView> {
             // WormHolyRequestsView is already presented, do nothing
             return
@@ -123,10 +129,6 @@ public class Wormholy: NSObject
         
         topMostVC.present(hostingController, animated: true)
         
-    }
-    
-    public static func createWormHolyRequestsView() -> WormHolyRequestsView {
-        return WormHolyRequestsView()
     }
     
     @objc public static var shakeEnabled: Bool = {

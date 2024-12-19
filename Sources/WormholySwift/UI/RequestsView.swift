@@ -8,7 +8,7 @@
 import SwiftUI
 
 @available(iOS 16.0, *)
-public struct WormHolyRequestsView: View {
+internal struct WormHolyRequestsView: View {
     @State private var searchText = Storage.defaultFilter ?? ""
     @ObservedObject private var storage = Storage.shared
     @State private var filteredRequests: [RequestModel] = []
