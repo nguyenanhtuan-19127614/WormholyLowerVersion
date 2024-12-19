@@ -18,7 +18,7 @@ public struct WormHolyRequestsView: View {
     @State private var isStatsViewPresented = false
     @State private var selectedExportOption: RequestResponseExportOption = .flat
     @State private var selectedStatusCodeRange: ClosedRange<Int>? // Range of status codes for filtering requests
-
+    
     init(requests: [RequestModel] = []) {
         _filteredRequests = State(initialValue: requests)
         if let defaultFilter = Storage.defaultFilter, !defaultFilter.isEmpty {

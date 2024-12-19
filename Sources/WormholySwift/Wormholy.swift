@@ -107,8 +107,11 @@ public class Wormholy: NSObject
     // MARK: - Navigation
     public static func presentWormholyFlow() {
         // Check if WormHolyRequestsView is already presented
-        if let rootViewController = UIApplication.shared.windows.first?.rootViewController,
-           let hostingController = rootViewController.presentedViewController as? UIHostingController<WormHolyRequestsView> {
+        
+        guard let topMostVC = UIWindow.getTopMostWormholyVC() else {
+            return
+        }
+        if let hostingController = topMostVC.presentedViewController as? UIHostingController<WormHolyRequestsView> {
             // WormHolyRequestsView is already presented, do nothing
             return
         }
@@ -117,7 +120,13 @@ public class Wormholy: NSObject
         let requestsView = WormHolyRequestsView()
         let hostingController = UIHostingController(rootView: requestsView)
         hostingController.modalPresentationStyle = .fullScreen
-        UIApplication.shared.windows.first?.rootViewController?.present(hostingController, animated: true, completion: nil)
+        
+        topMostVC.present(hostingController, animated: true)
+        
+    }
+    
+    public static func createWormHolyRequestsView() -> WormHolyRequestsView {
+        return WormHolyRequestsView()
     }
     
     @objc public static var shakeEnabled: Bool = {
@@ -158,4 +167,26 @@ extension Wormholy {
     @objc public static func isWormholyEnabled() -> Bool {
         return isEnabled
     }
+}
+
+fileprivate extension UIWindow {
+    
+    static func getTopMostWormholyVC() -> UIViewController? {
+        
+        let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+        
+        if var topController = keyWindow?.rootViewController {
+            
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            
+            return topController
+            
+        }
+        
+        return nil
+        
+    }
+    
 }
