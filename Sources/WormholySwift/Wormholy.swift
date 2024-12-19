@@ -106,15 +106,15 @@ public class Wormholy: NSObject
     
     // MARK: - Navigation
     public static func presentWormholyFlow() {
-        // Check if RequestsView is already presented
+        // Check if WormHolyRequestsView is already presented
         if let rootViewController = UIApplication.shared.windows.first?.rootViewController,
-           let hostingController = rootViewController.presentedViewController as? UIHostingController<RequestsView> {
-            // RequestsView is already presented, do nothing
+           let hostingController = rootViewController.presentedViewController as? UIHostingController<WormHolyRequestsView> {
+            // WormHolyRequestsView is already presented, do nothing
             return
         }
         
-        // Present RequestsView as a SwiftUI view
-        let requestsView = RequestsView()
+        // Present WormHolyRequestsView as a SwiftUI view
+        let requestsView = WormHolyRequestsView()
         let hostingController = UIHostingController(rootView: requestsView)
         hostingController.modalPresentationStyle = .fullScreen
         UIApplication.shared.windows.first?.rootViewController?.present(hostingController, animated: true, completion: nil)

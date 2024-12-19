@@ -1,5 +1,5 @@
 //
-//  RequestsView.swift
+//  WormHolyRequestsView.swift
 //  Wormholy
 //
 //  Created by Paolo Musolino on 20/11/24.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @available(iOS 16.0, *)
-internal struct RequestsView: View {
+public struct WormHolyRequestsView: View {
     @State private var searchText = Storage.defaultFilter ?? ""
     @ObservedObject private var storage = Storage.shared
     @State private var filteredRequests: [RequestModel] = []
@@ -26,7 +26,7 @@ internal struct RequestsView: View {
         }
     }
     
-    var body: some View {
+    public var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
                 SearchBar(text: $searchText, onTextChanged: filterRequests)
@@ -115,7 +115,7 @@ internal struct RequestsView: View {
 }
 
 @available(iOS 16.0, *)
-struct RequestsView_Previews: PreviewProvider {
+struct WormHolyRequestsView_Previews: PreviewProvider {
     static var previews: some View {
         // Create fake data for preview using the mock initializer with all parameters
         let fakeRequests = [
@@ -156,7 +156,7 @@ struct RequestsView_Previews: PreviewProvider {
                 duration: 2.34
             )
         ]
-        // Inject fake data into RequestsView
-        return RequestsView(requests: fakeRequests)
+        // Inject fake data into WormHolyRequestsView
+        return WormHolyRequestsView(requests: fakeRequests)
     }
 }
