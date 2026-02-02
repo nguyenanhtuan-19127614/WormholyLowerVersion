@@ -14,6 +14,8 @@ internal enum RequestResponseExportOption {
     case flat
     /// Request is exported as a cURL command; response is exported in a "human" readable mode.
     case curl
+    /// Request is exported as a cURL command; response is exported in a "human" readable mode.
+    case curlOnly
     /// Request and response are exported as Postman collection (v.2.1). Response is attached as "example".
     case postman
 }

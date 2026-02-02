@@ -75,6 +75,10 @@ internal struct WormHolyRequestsView: View {
                             selectedExportOption = .curl
                             isShareSheetPresented = true
                         },
+                        .default(Text("Share as cURL Only")) {
+                            selectedExportOption = .curlOnly
+                            isShareSheetPresented = true
+                        },
                         .default(Text("Share as Postman Collection")) {
                             selectedExportOption = .postman
                             isShareSheetPresented = true

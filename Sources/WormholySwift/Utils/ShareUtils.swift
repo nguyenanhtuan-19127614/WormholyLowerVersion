@@ -17,6 +17,8 @@ internal final class ShareUtils {
             text = getTxtText(requests: requests)
         case .curl:
             text = getCurlText(requests: requests)
+        case .curlOnly:
+            text = getCurlOnlyText(requests: requests)
         case .postman:
             text = getPostmanCollection(requests: requests) ?? "{}"
             text = text.replacingOccurrences(of: "\\/", with: "/")
@@ -36,6 +38,8 @@ internal final class ShareUtils {
             case .flat:
                 suffix = "-wormholy.txt"
             case .curl:
+                suffix = "-wormholy.txt"
+            case .curlOnly:
                 suffix = "-wormholy.txt"
             case .postman:
                 suffix = "-postman_collection.json"
@@ -63,6 +67,14 @@ internal final class ShareUtils {
         var text: String = ""
         for request in requests {
             text += RequestModelBeautifier.curlExport(request: request)
+        }
+        return text
+    }
+    
+    private static func getCurlOnlyText(requests: [RequestModel]) -> String {
+        var text: String = ""
+        for request in requests {
+            text += RequestModelBeautifier.curlOnlyExport(request: request)
         }
         return text
     }
